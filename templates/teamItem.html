@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <template>
-<<<<<<< HEAD
   <article class="team-card">
     <div class="team-header">
       <div class="logo-wrapper">
-          <img class="team-logo-target" alt="Logo" loading="lazy">
+          <img data-bind-attr-src="logoUrl" class="team-logo-target" alt="Logo" loading="lazy">
       </div>
       
       <h2 class="team-name-target" data-bind="teamName"></h2>
@@ -12,18 +11,7 @@
    
     <div class="team-info">
       <p data-bind="title"></p>
-      <p class="date" data-bind="uploadedAt"></p>
+      
     </div>
-=======
-  <article>
-    <!-- data-bind-attr-src="logoUrl" : Affiche le logo de l'équipe -->
-    <img data-bind-attr-src="logoUrl" alt="Logo">
-    <!-- data-bind="teamName" : Affiche le nom de l'équipe -->
-    <h2 data-bind="teamName"></h2>
-    <!-- data-bind="uploadedAt" : Affiche la date de téléversement -->
-    <p data-bind="uploadedAt"></p>
-    <!-- data-bind="author" : Affiche l'auteur -->
-    <p data-bind="author"></p>
->>>>>>> upstream/main
   </article>
 </template>
