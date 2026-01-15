@@ -4,8 +4,8 @@
    Variables CSS
    =============================================== */
 :root {
-  --primary-color: #2563eb;
-  --secondary-color: #7c3aed;
+  --primary-color: #19365E;
+  --secondary-color: #433aed;
   --accent-color: #06b6d4;
   --text-dark: #1e293b;
   --text-light: #64748b;
@@ -143,7 +143,8 @@ h1, h2, h3, h4 {
 }
 
 .section-title {
-  text-align: center;
+  /* CHANGEMENT ICI : Alignement à gauche */
+  text-align: left;
   font-size: 2.5rem;
   margin-bottom: 3rem;
   color: var(--text-dark);
@@ -178,7 +179,7 @@ h1, h2, h3, h4 {
 .stat-number {
   font-size: 2.5rem;
   font-weight: 800;
-  color: var(--primary-color);
+  color: black;
   margin-bottom: 0.5rem;
 }
 
@@ -190,18 +191,25 @@ h1, h2, h3, h4 {
 /* ===============================================
    Logo Marquee Section
    =============================================== */
-.clubs {
-  padding: 5rem 0;
-  background: var(--bg-white);
-  text-align: center;
-  overflow: hidden;
-}
+   .clubs {
+    padding: 5rem 0;
+    background: var(--bg-white);
+    /* CHANGEMENT ICI : On retire le text-align: center global */
+    text-align: left;
+    overflow: hidden;
+  }
 
-.clubs-title {
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: var(--text-dark);
-  font-weight: 700;
+  .clubs-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-dark);
+    font-weight: 700;
+    text-align: left;
+  max-width: 1200px; /* Même largeur que .container */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem; /* Même marge que .container */
+  padding-right: 1.5rem;
 }
 
 .marquee {
