@@ -29,4 +29,5 @@ export function fillGlobals(data) {
     const key = el.getAttribute("data-bind-global");
     el.textContent = data[key] ?? "";
   });
-}
+  }
+

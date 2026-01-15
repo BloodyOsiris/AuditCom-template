@@ -1,6 +1,6 @@
 import { loadTemplate } from "./loadTemplate.js";
 import { fillTemplate, fillGlobals } from "./templating.js";
-
+import { loadTemplate } from "./loadTemplate.js";
 
 const API_URL="https://auditcom.onrender.com/api"
 

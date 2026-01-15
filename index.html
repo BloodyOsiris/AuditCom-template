@@ -1,27 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="src/main.js" type="module" defer></script>
-
-</head>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AuditCom - Analyse Communication des Équipes Sportives</title>
+        
+        <meta name="description" content="Découvrez notre analyse approfondie de la communication de plus de 30 équipes sportives. Téléchargez le rapport complet gratuitement.">
+        <meta name="keywords" content="communication sportive, analyse médias, équipes sportives, rapport">
+        
+        <meta property="og:title" content="AuditCom - Analyse Communication des Équipes Sportives">
+        <meta property="og:description" content="Découvrez notre analyse approfondie de la communication de plus de 30 équipes sportives. Téléchargez le rapport complet gratuitement.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://votresite.github.io">
+        <meta property="og:image" content="https://votresite.github.io/images/og-image.jpg">
+        
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="AuditCom - Analyse Communication des Équipes Sportives">
+        <meta name="twitter:description" content="Découvrez notre analyse approfondie de la communication de plus de 30 équipes sportives.">
+        
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        
+        <script src="src/main.js" type="module" defer></script>
+        
+        <script src="src/injectImages.js" defer></script>
+    </head>
 <body>
-    <!-- data-bind-global="count" : Affiche le nombre total de rapports (métadonnées globales) -->
-    <h1 data-bind-global="count"></h1>
-    
-    <!-- id="teamList" : Conteneur où seront ajoutés dynamiquement les éléments de l'équipe. Le nom de cet ID ne doit pas être modifié. -->
-    <section id="teamList">
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1 class="hero-title">AuditCom</h1>
+            <p class="hero-subtitle">Une analyse approfondie de la stratégie de communication digitale de <span class="highlight" data-bind-global="count"></span> équipes sportives professionnelles</p>
+            <a href="#download" class="cta-button">Télécharger le rapport</a>
+        </div>
+    </header>
+
+    <!-- Key Statistics Section -->
+    <section class="statistics">
+        <div class="container">
+            <h2 class="section-title">Insights Clés</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-number" data-bind-global="count">28</div>
+                    <div class="stat-label">Équipes analysées</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🌐</div>
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Plateformes sociales étudiées</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📈</div>
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Des équipes ont une présence digitale</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Critères d'évaluation</div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- id="messageContainer" : Conteneur pour afficher les messages de succès ou d'erreur. Le nom de cet ID ne doit pas être modifié. -->
-    <div id="messageContainer"></div>
+    <!-- Teams List Section -->
+    <section class="teams-section">
+        <div class="container">
+            <h2 class="section-title">Équipes Analysées</h2>
+            <div id="teamList" class="teams-grid">
+                <!-- Les équipes seront insérées ici dynamiquement -->
+            </div>
+        </div>
+    </section>
 
-    <!-- id="downloadForm" : Formulaire pour télécharger le PDF. Le nom de cet ID ne doit pas être modifié. -->
-    <form id="downloadForm">
-    </form>
+    <!-- Download Form Section -->
+    <section class="download-section" id="download">
+        <div class="container">
+            <div class="form-wrapper">
+                <h2 class="section-title">Téléchargez le Rapport Complet</h2>
+                <p class="form-intro">Accédez gratuitement à notre analyse détaillée et découvrez les meilleures pratiques en communication sportive.</p>
+                
+                <form id="downloadForm" class="download-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">Prénom *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Nom *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Adresse email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="newsletterAgreement" required>
+                            <span>J'accepte de recevoir la newsletter et les actualités d'AuditCom *</span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Télécharger le rapport PDF</button>
+                </form>
+                
+                <!-- Message Container -->
+                <div id="messageContainer"></div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AuditCom</h3>
+                    <p>Analyse de la communication digitale des équipes sportives</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: contact@auditcom.ch</p>
+                    <p>Yverdon-les-Bains, Suisse</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens utiles</h4>
+                    <a href="#download">Télécharger le rapport</a>
+                    <a href="https://github.com/votreusername" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AuditCom. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
