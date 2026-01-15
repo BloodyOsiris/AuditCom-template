@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 <template>
-  <!-- 
-    data-bind="message" : Affiche le message de succès ou d'erreur
-    data-bind-attr-class="messageClass" : Ajoute une classe CSS pour le style (ex: "success" ou "error")
-    data-bind="progressPercent" : Affiche le pourcentage de progression (optionnel, pour les messages de type "loading")
-  -->
-    
   <aside data-bind-attr-class="messageClass" class="message">
     <p data-bind="message"></p>
     <div class="progress-container" data-bind-attr-style="progressContainerStyle">
@@ -13,60 +7,59 @@
       <span class="progress-text" data-bind="progressPercent"></span>
     </div>
   </aside>
-
-  
 </template>
 
 <style>
-.message-box {
-  padding: 1rem 1.25rem;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  animation: slideIn 0.3s ease-out;
-  border: 1px solid;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
+  .message-box {
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    animation: slideIn 0.3s ease-out;
+    border: 1px solid;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-}
 
-.message-box.success {
-  background-color: #d1fae5;
-  border-color: #10b981;
-  color: #065f46;
-}
+  .message-box.success {
+    background-color: #d1fae5;
+    border-color: #10b981;
+    color: #065f46;
+  }
 
-.message-box.error {
-  background-color: #fee2e2;
-  border-color: #ef4444;
-  color: #991b1b;
-}
+  .message-box.error {
+    background-color: #fee2e2;
+    border-color: #ef4444;
+    color: #991b1b;
+  }
 
-.message-icon {
-  font-size: 1.5rem;
-  flex-shrink: 0;
-}
+  .message-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
 
-.message-icon[data-type="success"]::before {
-  content: "✓";
-}
+  .message-icon[data-type="success"]::before {
+    content: "✓";
+  }
 
-.message-icon[data-type="error"]::before {
-  content: "✕";
-}
+  .message-icon[data-type="error"]::before {
+    content: "✕";
+  }
 
-.message-text {
-  margin: 0;
-  font-weight: 500;
-  flex-grow: 1;
-}
+  .message-text {
+    margin: 0;
+    font-weight: 500;
+    flex-grow: 1;
+  }
 </style>
