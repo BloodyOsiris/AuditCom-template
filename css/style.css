@@ -1,5 +1,8 @@
 @import "reset.css";
 
+/* ===============================================
+   Variables
+   =============================================== */
 :root {
   --primary-color: #19365E;
   --secondary-color: #433aed;
@@ -18,22 +21,23 @@
   --transition: all 0.3s ease;
 }
 
-body {
+/* ===============================================
+   Base Styles
+   =============================================== */
+html,body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   color: var(--text-dark);
   line-height: 1.6;
   background-color: var(--bg-light);
+  scroll-behavior: smooth;
+  
 }
 
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4 {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1rem;
 }
-
 
 .container {
   max-width: 1200px;
@@ -41,9 +45,11 @@ h4 {
   padding: 0 1.5rem;
 }
 
-
+/* ===============================================
+   Hero Section
+   =============================================== */
 .hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/Image_hero.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/stadium-2921657_1280.png');
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
@@ -97,20 +103,9 @@ h4 {
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 3rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.2rem;
-  }
-
-  .hero {
-    background-position: center bottom;
-  }
-}
-
+/* ===============================================
+   Statistics Section
+   =============================================== */
 .statistics {
   padding: 5rem 0;
   background-color: var(--bg-white);
@@ -161,6 +156,9 @@ h4 {
   font-size: 1rem;
 }
 
+/* ===============================================
+   Clubs & Marquee Section
+   =============================================== */
 .clubs {
   padding: 5rem 0;
   background: var(--bg-white);
@@ -185,16 +183,8 @@ h4 {
   overflow: hidden;
   width: 100%;
   position: relative;
-  mask-image: linear-gradient(to right,
-      transparent,
-      black 10%,
-      black 90%,
-      transparent);
-  -webkit-mask-image: linear-gradient(to right,
-      transparent,
-      black 10%,
-      black 90%,
-      transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 .marquee__track {
@@ -229,25 +219,11 @@ h4 {
   border-color: var(--primary-color);
 }
 
-.logo-item {
-  flex-shrink: 0;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
-  border-radius: 50%;
-  border: 2px solid #e2e8f0;
-  overflow: hidden;
-}
-
 .logo-item img {
   width: 70%;
   height: 70%;
   object-fit: contain;
 }
-
 
 .logo-placeholder {
   font-size: 1.5rem;
@@ -256,16 +232,13 @@ h4 {
 }
 
 @keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
-
+/* ===============================================
+   Logo Banner (Secondary)
+   =============================================== */
 .logo-banner-wrapper {
   margin-bottom: 4rem;
   padding: 3rem 0;
@@ -277,16 +250,8 @@ h4 {
   overflow: hidden;
   width: 100%;
   position: relative;
-  mask-image: linear-gradient(to right,
-      transparent,
-      black 10%,
-      black 90%,
-      transparent);
-  -webkit-mask-image: linear-gradient(to right,
-      transparent,
-      black 10%,
-      black 90%,
-      transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   display: flex;
   gap: 3rem;
   animation: scrollBanner 30s linear infinite;
@@ -330,7 +295,6 @@ h4 {
   opacity: 1;
 }
 
-
 .logo-banner-item .logo-placeholder {
   font-size: 1.5rem;
   font-weight: 700;
@@ -338,23 +302,20 @@ h4 {
 }
 
 @keyframes scrollBanner {
-  0% {
-    transform: translateX(0);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 
-  100% {
-    transform: translateX(-50%);
-  }
+/* ===============================================
+   Teams Section (Interactive Cards)
+   =============================================== */
+.teams-section {
+  padding: 5rem 0;
+  background-color: var(--bg-light);
 }
 
 .section-title-details {
   margin-top: 3rem;
-}
-
-
-.teams-section {
-  padding: 5rem 0;
-  background-color: var(--bg-light);
 }
 
 .teams-grid {
@@ -364,18 +325,98 @@ h4 {
 }
 
 .team-card {
+  position: relative;
   background: white;
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
-  padding: 1.5rem;
-
-
-  text-align: left;
-
+  min-height: 250px;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
+  overflow: hidden;
+  cursor: default;
+}
+
+.team-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  transition: all 0.4s ease-in-out;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-front {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  background-color: white;
+  z-index: 2;
+}
+
+.team-card:hover .card-front {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.team-card:hover .card-back {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Style Content Cards */
+.info-title {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.card-back .team-title {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.info-divider {
+  width: 40px;
+  height: 3px;
+  background: #19365E;
+  margin: 0 auto 1rem auto;
+  border-radius: 2px;
+}
+
+.card-back .team-date {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.team-header {
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .logo-wrapper {
@@ -390,21 +431,6 @@ h4 {
   padding: 0.5rem;
 }
 
-.team-header {
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.team-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--primary-color);
-}
-
-
-
 .team-logo-target {
   max-width: 100%;
   max-height: 100%;
@@ -418,23 +444,17 @@ h4 {
   font-weight: 700;
 }
 
-.team-info {
-  color: var(--text-light);
-  font-size: 0.95rem;
-}
-
-.team-info p {
-  margin-bottom: 0.5rem;
-}
-
-.team-info .date {
-  font-size: 0.875rem;
-  color: var(--text-light);
-}
-
+/* ===============================================
+   Download Form Section
+   =============================================== */
 .download-section {
   padding: 5rem 0;
   background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
+}
+
+.section-title-form {
+  text-align: center;
+  font-size: 2rem;
 }
 
 .form-wrapper {
@@ -444,10 +464,8 @@ h4 {
   padding: 3rem;
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
-
   text-align: left;
 }
-
 
 .form-intro {
   text-align: left;
@@ -539,6 +557,9 @@ h4 {
   box-shadow: var(--shadow-lg);
 }
 
+/* ===============================================
+   Feedback Messages & Progress
+   =============================================== */
 #messageContainer {
   margin-top: 1.5rem;
 }
@@ -551,15 +572,8 @@ h4 {
 }
 
 @keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .message.success {
@@ -588,6 +602,7 @@ h4 {
   width: 100%;
   height: 8px;
   border-radius: 4px;
+  color: #19365E;
 }
 
 .progress-text {
@@ -597,6 +612,9 @@ h4 {
   font-weight: 600;
 }
 
+/* ===============================================
+   Footer
+   =============================================== */
 .footer {
   background-color: var(--text-dark);
   color: white;
@@ -635,58 +653,59 @@ h4 {
   color: rgba(255, 255, 255, 0.6);
 }
 
+/* ===============================================
+   Responsive (Mobile & Tablet)
+   =============================================== */
 @media (max-width: 768px) {
-  .footer-content {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    text-align: center;
-  }
-}
-
-@media (max-width: 768px) {
+  /* Hero */
   .hero {
     padding: 4rem 0 3rem;
+    background-position: center bottom;
   }
-
   .hero-title {
     font-size: 2.5rem;
   }
-
   .hero-subtitle {
     font-size: 1.1rem;
   }
 
+  /* Titles */
   .section-title,
   .clubs-title {
     font-size: 2rem;
   }
 
+  /* Stats */
   .stats-grid {
     grid-template-columns: 1fr;
   }
 
+  /* Marquee */
   .marquee__track {
     animation-duration: 20s;
     gap: 2rem;
   }
-
   .marquee__track img {
     height: 60px;
   }
 
+  /* Forms */
   .form-row {
     grid-template-columns: 1fr;
   }
-
   .form-wrapper {
     padding: 2rem 1.5rem;
   }
 
+  /* Teams */
   .teams-grid {
     grid-template-columns: 1fr;
   }
 
+  /* Footer */
   .footer-content {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    text-align: center;
   }
 }
 
@@ -694,11 +713,9 @@ h4 {
   .hero-title {
     font-size: 2rem;
   }
-
   .container {
     padding: 0 1rem;
   }
-
   .marquee__track img {
     height: 48px;
   }

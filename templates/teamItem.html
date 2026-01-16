@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <template>
   <article class="team-card">
-    <div class="team-header">
-      <div class="logo-wrapper">
-        <img data-bind-attr-src="logoUrl" class="team-logo-target" alt="Logo" loading="lazy">
+    
+    <div class="card-front">
+      <div class="team-header">
+        <div class="logo-wrapper">
+           <img data-bind-attr-src="logoUrl" class="team-logo-target" alt="Logo" loading="lazy">
+        </div>
+        <h3 class="team-name" data-bind="teamName"></h3>
+      </div>
+    </div>
+
+    <div class="card-back">
+      <h4 class="info-title">Détails du rapport</h4>
+      <p class="team-title" data-bind="title"></p>
+      <div class="info-divider"></div>
+      <p class="team-date">Analysé le : <span data-bind="uploadedAt"></span></p>
       </div>
 
-      <h2 class="team-name-target" data-bind="teamName"></h2>
-    </div>
-
-    <div class="team-info">
-      <p data-bind="title"></p>
-
-    </div>
   </article>
 </template>
